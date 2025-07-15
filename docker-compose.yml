@@ -1,0 +1,32 @@
+services:
+  safenotes:
+    container_name: safenotes-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - data:/app
+    environment:
+      - NODE_ENV=production
+    networks:
+      - safenotes-network
+
+  db:
+    image: postgres:latest
+    container_name: safenotes-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=safenotes
+      - POSTGRES_PASSWORD=safenotes
+    networks:
+      - safenotes-network
+networks:
+  safenotes-network:
+volumes:
+  data:
+  db_data:
