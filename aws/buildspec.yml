@@ -2,11 +2,19 @@ version: 0.2
 
 phases:
   install:
+    run-as: root
+
     commands:
-    - npm install
+      - echo "Installing dependencies"
+      - apt-get update -y
+      - apt-get install -y nodejs npm
+      - echo "Installing npm packages"
+      - npm install
+    finally:
+      - echo "Installation complete"
   build:
     commands:
-      - npm run start
+      - npm run build
 artifacts:
   files:
   - '**/*'
