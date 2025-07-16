@@ -1,8 +1,9 @@
 version: 0.2
+
 phases:
   install:
     commands:
-    - docker compose up -f
+    - docker compose up
   build:
     commands:
       - docker compose build
