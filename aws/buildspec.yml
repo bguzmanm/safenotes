@@ -2,10 +2,10 @@ version: 0.2
 phases:
   install:
     commands:
-    - docker compose up -f docker-compose.yml -d 
+    - docker compose up -f
   build:
     commands:
-      - docker compose build -f docker-compose.yml
-  artifacts:
-    files:
-    - '**/*'
+      - docker compose build
+artifacts:
+  files:
+  - '**/*'
