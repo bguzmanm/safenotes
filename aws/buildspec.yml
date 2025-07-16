@@ -3,10 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-    - docker compose up
+    - npm install
   build:
     commands:
-      - docker compose build
+      - npm run start
 artifacts:
   files:
   - '**/*'
