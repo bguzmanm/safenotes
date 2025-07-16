@@ -8,8 +8,6 @@ phases:
       - apt-get install -y nodejs npm
       - echo "Installing npm packages"
       - npm install
-    finally:
-      - echo "Installation complete"
   build:
     commands:
       - npm run build
