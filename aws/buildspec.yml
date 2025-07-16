@@ -2,8 +2,6 @@ version: 0.2
 
 phases:
   install:
-    run-as: root
-
     commands:
       - echo "Installing dependencies"
       - apt-get update -y
